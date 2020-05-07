@@ -4,6 +4,16 @@ A new Flutter application.
 
 ## Getting Started
 
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  flutter_bloc: ^1.0.0
+  equatable: ^0.6.1
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
