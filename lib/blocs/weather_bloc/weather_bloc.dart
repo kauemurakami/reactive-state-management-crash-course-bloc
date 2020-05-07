@@ -9,10 +9,9 @@ part 'weather_event.dart';
 part 'weather_state.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
+  final WeatherRepository weatherRepository;
 
-  final WeatherRepository repository;
-
-  WeatherBloc(this.repository);
+  WeatherBloc(this.weatherRepository);
 
   @override
   WeatherState get initialState => WeatherInitial();
@@ -22,21 +21,20 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     WeatherEvent event,
   ) async* {
     yield WeatherLoading();
-    if(event is GetWeather){
-      try{
-        final weather = await repository.fetchWeather(event.cityName);
+    if (event is GetWeather) {
+      try {
+        final weather = await weatherRepository.fetchWeather(event.cityName);
         yield WeatherLoaded(weather);
-      }on NetworkError{
-        yield WeatherError("Erro de conexão");
+      } on NetworkError {
+        yield WeatherError("Couldn't fetch weather. Is the device online?");
       }
-    }else if(event is GetDetailedWeather){
-      try{
-        final weather = await repository.fetchDetailedWeather(event.cityName);
+    } else if (event is GetDetailedWeather) {
+      try {
+        final weather = await weatherRepository.fetchDetailedWeather(event.cityName);
         yield WeatherLoaded(weather);
-      }on NetworkError{
-        yield WeatherError("Erro de conexão");
-      
+      } on NetworkError {
+        yield WeatherError("Couldn't fetch weather. Is the device online?");
+      }
     }
-
   }
 }

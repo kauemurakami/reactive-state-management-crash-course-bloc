@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_v1_tutorial/bloc/bloc.dart';
-
-import '../data/model/weather.dart';
+import 'package:weathersearch/blocs/weather_bloc/weather_bloc.dart';
+import 'package:weathersearch/models/weather.dart';
 
 class WeatherDetailPage extends StatefulWidget {
   final Weather masterWeather;
@@ -40,6 +39,7 @@ class _WeatherDetailPageState extends State<WeatherDetailPage> {
             } else if (state is WeatherLoaded) {
               return buildColumnWithData(context, state.weather);
             }
+            return Container();
           },
         ),
       ),

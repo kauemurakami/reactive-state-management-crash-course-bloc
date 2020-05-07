@@ -12,17 +12,15 @@ class GetWeather extends WeatherEvent {
   const GetWeather(this.cityName);
 
   @override
-  // TODO: implement props
   List<Object> get props => [cityName];
 }
 
-class GetDetailWeather extends WeatherEvent {
+class GetDetailedWeather extends WeatherEvent {
   
   final String cityName;
 
-  const GetDetailWeather(this.cityName);
+  const GetDetailedWeather(this.cityName);
 
   @override
-  // TODO: implement props
   List<Object> get props => [cityName];
 }
