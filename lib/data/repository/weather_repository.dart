@@ -13,7 +13,6 @@ class FakeWeatherRepository implements WeatherRepository {
 
   @override
   Future<Weather> fetchDetailedWeather(String cityName) {
-    // TODO: implement fetchDetailedWeather
     return Future.delayed(
       Duration(seconds: 1),
         (){
@@ -28,7 +27,6 @@ class FakeWeatherRepository implements WeatherRepository {
 
   @override
   Future<Weather> fetchWeather(String cityName) {
-    // TODO: implement fetchWeather
     return Future.delayed(
         Duration(seconds: 1),
         (){
