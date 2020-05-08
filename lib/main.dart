@@ -13,17 +13,9 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       title: 'Weather App',
       home: BlocProvider(
-        create: 
-         (context) => WeatherBloc(FakeWeatherRepository()),
+        create: (context) => WeatherBloc(FakeWeatherRepository()),
         child: WeatherSearchPage(),
       ),
     );
   }
 }
-/*
- home: BlocProvider(
-        create: 
-        builder: (context) => WeatherBloc(FakeWeatherRepository()),
-        child: WeatherSearchPage(),
-      ),
-*/
