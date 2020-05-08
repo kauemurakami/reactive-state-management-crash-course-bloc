@@ -10,16 +10,15 @@ flutter:
 
 sdk: flutter
 
-
-  
-  
-
 cupertino_icons: ^0.1.2
 
-flutter_bloc: ^1.0.0
+flutter_bloc: ^2.1.1
 
-equatable: ^0.6.1
+equatable: ^1.6.1
 
+dev_dependencies:
+
+bloc_test: ^2.2.2
 
 This project is a starting point for a Flutter application.
 
