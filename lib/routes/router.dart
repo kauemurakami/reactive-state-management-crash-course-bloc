@@ -5,8 +5,9 @@ import 'package:weathersearch/models/weather.dart';
 import 'package:weathersearch/screens/android/weather_page/weather_search_page.dart';
 import 'package:weathersearch/screens/android/weather_page_detail/weather_detail_page.dart';
 part 'routes.dart';
+
 class Router{
-  
+
     static Route<dynamic> routeGenerator(RouteSettings settings) {
       switch (settings.name) {
         case RouteList.ROUTE_ROOT :
